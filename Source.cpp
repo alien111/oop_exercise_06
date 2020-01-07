@@ -39,7 +39,7 @@ int main() {
 	size_t size;
 	std::cin >> size;
 
-	Containers::Vector< rectangle< int > > vec;
+	Containers::Vector< rectangle< int >, Allocator< rectangle< int >, 1000 > > vec;
 	vec.Resize(size);
 
 	while(true) {
