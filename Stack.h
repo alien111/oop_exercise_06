@@ -147,10 +147,11 @@ namespace Containers {
                 head->prev = new_elem;
                 head = new_elem;
             } else {
+                std::shared_ptr<StackNode<T>> cur_ptr = iter.ptr_.lock();
                 std::shared_ptr<StackNode<T>> prev_ptr = iter.ptr_.lock()->prev.lock();
                 prev_ptr->next = new_elem;
-                tail->prev = new_elem;
-                new_elem->next = tail;
+                cur_ptr->prev = new_elem;
+                new_elem->next = cur_ptr;
                 new_elem->prev = prev_ptr;
             }
         }

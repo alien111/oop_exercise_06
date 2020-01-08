@@ -59,7 +59,7 @@ namespace Allocators {
                 mem_list.Insert(std::next(it),
                                 MemoryNode{it->beginning + mem_size, it->capacity - mem_size, MemoryNodeType::Hole});
                 it->type = MemoryNodeType::Occupied;
-                it->capacity -= mem_size;
+                it->capacity = mem_size;
             }
             return (T *) it->beginning;
         }
