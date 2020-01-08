@@ -60,9 +60,6 @@ namespace Containers {
         }
 
         void Resize(size_t new_size) {
-            if (new_size == size_) {
-                return;
-            }
             if (new_size == 0) {
                 data_ = nullptr;
                 return;

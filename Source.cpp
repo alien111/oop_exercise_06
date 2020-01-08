@@ -24,7 +24,7 @@ void menu() {
 }
 
 int main() {
-    std::map<int,int,std::less<>, Allocator<int,100000>> m;
+    std::map<int,int,std::less<>, Allocators::Allocator<int,100000>> m;
     
     for (int i = 0; i < 10; ++i) {
 		m[i] = i * i;
@@ -39,7 +39,7 @@ int main() {
 	size_t size;
 	std::cin >> size;
 
-	Containers::Vector< rectangle< int >, Allocator< rectangle< int >, 1000 > > vec;
+	Containers::Vector< rectangle< int >, Allocators::Allocator< rectangle< int >, 1000 > > vec;
 	vec.Resize(size);
 
 	while(true) {
