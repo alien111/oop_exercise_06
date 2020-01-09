@@ -73,6 +73,7 @@ namespace Containers {
             std::shared_ptr<T> new_data = std::shared_ptr<T>(ptr, deleter(&allocator_, new_size));
             for (size_t i = 0; i < std::min(new_size, size_); ++i) {
                 new_data.get()[i] = data_.get()[i];
+                std::allocator_traits<Allocator>::destroy(allocator_,data_.get() + i);
             }
             data_ = new_data;
             size_ = new_size;
