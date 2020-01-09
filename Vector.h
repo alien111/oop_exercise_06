@@ -60,10 +60,10 @@ namespace Containers {
         }
 
         void Resize(size_t new_size) {
-            if (new_size == 0) {
+            /*if (new_size == 0) {
                 data_ = nullptr;
                 return;
-            }
+            }*/
             if (new_size < size_) {
                 for (size_t i = new_size; i < size_; ++i) {
                     std::allocator_traits<Allocator>::destroy(allocator_,data_.get() + i);
